@@ -11,28 +11,28 @@
     "rootDir": "src",
     "outDir": "dist/",
     "module": "ESNext",
-       "target": "ES2023",
-
-    "types": ["node"],
-    // For nodejs:
-    "lib": ["esnext"],
-    // and npm install -D @types/node
-    // Other Outputs
-      "moduleResolution": "bundler",
+    "target": "ES2023",
+    "types": [
+      "node",
+      "jest"
+    ],
+    "lib": [
+      "esnext"
+    ],
+    "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    // Stricter Typechecking Options
+    "esModuleInterop": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "strict": true,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
     "isolatedModules": true,
+    "allowJs": true, // Permite que TypeScript procese archivos JS si es necesario
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-        "ignoreDeprecations": "6.0"
-
   }
 }

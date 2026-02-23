@@ -1,19 +1,18 @@
-import { log } from "node:console"
 import mongoose from "mongoose"
 interface ConnectionOptions {
     mongoUrl: string
     dbName: string
 }
 export class MongoDatabase {
-    
+
     static async connect(options: ConnectionOptions) {
         const { dbName, mongoUrl } = options
 
         try {
             await mongoose.connect(mongoUrl, { dbName })
-            log("Mongo connected")
+            return true;
         } catch (error) {
-            console.error("Mongo connection error")
+            throw error
         }
     }
 }
